@@ -70,6 +70,15 @@ Set the following to disable it: >
 <
 
 ------------------------------------------------------------------------------
+                                               *'statline_encoding_separator'*
+
+Separater to use between file format and encoding type (default is an arrow
+for UTF-8 encoding, a colon otherwise): >
+
+    let g:statline_encoding_separator = ':'
+<
+
+------------------------------------------------------------------------------
                                                *'statline_no_encoding_string'*
 
 The text to show in the status line when the encoding is unknown (default is

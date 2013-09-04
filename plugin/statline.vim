@@ -86,10 +86,14 @@ set statusline+=\ %y
 
 " ---- file format → file encoding ----
 
-if &encoding == 'utf-8'
-    let g:statline_encoding_separator = '→'
-else
-    let g:statline_encoding_separator = ':'
+" Allow user to override the separator.  This may help when using Vim in a
+" terminal that is not set up for UTF-8.
+if ! exists('g:statline_encoding_separator')
+  if &encoding == 'utf-8'
+      let g:statline_encoding_separator = '→'
+  else
+      let g:statline_encoding_separator = ':'
+  endif
 endif
 
 if !exists('g:statline_show_encoding')
